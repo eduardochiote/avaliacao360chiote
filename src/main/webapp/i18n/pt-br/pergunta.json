@@ -1,0 +1,24 @@
+{
+    "avaliacao360ChioteApp": {
+        "pergunta" : {
+            "home": {
+                "title": "Perguntas",
+                "createLabel": "Criar novo Pergunta",
+                "createOrEditLabel": "Criar ou editar Pergunta",
+                "search": "Pesquisar por Pergunta"
+            },
+            "created": "Um novo Pergunta é criado com o identificador {{ param }}",
+            "updated": "Um Pergunta é atualizado com o identificador {{ param }}",
+            "deleted": "Um Pergunta é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Pergunta {{ id }}?"
+            },
+            "detail": {
+                "title": "Pergunta"
+            },
+            "assunto": "Assunto",
+            "texto": "Texto",
+            "avaliacaomodelo": "Avaliacaomodelo"
+        }
+    }
+}

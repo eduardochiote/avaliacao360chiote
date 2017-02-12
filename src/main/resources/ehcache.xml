@@ -24,5 +24,11 @@
 
     <cache alias="com.chiote.domain.Equipe.membros" uses-template="simple"/>
 
+    <cache alias="com.chiote.domain.Pergunta" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo.perguntas" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

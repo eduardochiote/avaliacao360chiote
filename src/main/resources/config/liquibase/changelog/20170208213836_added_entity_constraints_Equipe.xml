@@ -7,7 +7,7 @@
         Added the constraints for entity Equipe.
     -->
     <changeSet id="20170208213836-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="lider_id"
                                  baseTableName="equipe"
                                  constraintName="fk_equipe_lider_id"
@@ -19,11 +19,12 @@
                                  constraintName="fk_equipe_membros_equipes_id"
                                  referencedColumnNames="id"
                                  referencedTableName="equipe"/>
+
         <addForeignKeyConstraint baseColumnNames="membros_id"
                                  baseTableName="equipe_membros"
                                  constraintName="fk_equipe_membros_membros_id"
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"/>
-        
+
     </changeSet>
 </databaseChangeLog>
