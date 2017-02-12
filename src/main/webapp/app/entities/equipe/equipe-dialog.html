@@ -41,36 +41,10 @@
                 </p>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="avaliacao360ChioteApp.equipe.ativo" for="field_ativo">Ativo</label>
-            <input type="checkbox" class="form-control" name="ativo" id="field_ativo"
-                    ng-model="vm.equipe.ativo"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="avaliacao360ChioteApp.equipe.dataCriacao" for="field_dataCriacao">Data Criacao</label>
-                <div class="input-group">
-                    <input id="field_dataCriacao" type="text" class="form-control" name="dataCriacao" datetime-picker="{{dateformat}}" ng-model="vm.equipe.dataCriacao" is-open="vm.datePickerOpenStatus.dataCriacao"
-                    required  />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataCriacao')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                </div>
-            <div ng-show="editForm.dataCriacao.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.dataCriacao.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.dataCriacao.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
-                    This field should be a date and time.
-                </p>
-            </div>
-        </div>
 
         <div class="form-group">
             <label data-translate="avaliacao360ChioteApp.equipe.lider" for="field_lider">Lider</label>
-            <select class="form-control" id="field_lider" name="lider" ng-model="vm.equipe.lider" ng-options="user as user.login for user in vm.users track by user.id" required>
+            <select class="form-control" id="field_lider" name="lider" ng-model="vm.equipe.lider" ng-options="user as user.lastName for user in vm.users track by user.id" required>
                 <option value=""></option>
             </select>
         </div>

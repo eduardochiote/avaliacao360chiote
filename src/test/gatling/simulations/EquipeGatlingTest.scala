@@ -80,7 +80,7 @@ class EquipeGatlingTest extends Simulation {
             .exec(http("Create new equipe")
             .post("/api/equipes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nome":"SAMPLE_TEXT", "descricao":"SAMPLE_TEXT", "ativo":null, "dataCriacao":"2020-01-01T00:00:00.000Z"}""")).asJSON
+            .body(StringBody("""{"id":null, "nome":"SAMPLE_TEXT", "descricao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_equipe_url"))).exitHereIfFailed
             .pause(10)

@@ -32,21 +32,12 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="ativo" type="boolean">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="data_criacao" type="timestamp">
-                <constraints nullable="false" />
-            </column>
-            
             <column name="lider_id" type="bigint">
                 <constraints nullable="false" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="equipe" columnName="data_criacao" columnDataType="datetime"/>
         
         <createTable tableName="equipe_membros">
             <column name="membros_id" type="bigint">

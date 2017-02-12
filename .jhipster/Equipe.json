@@ -35,17 +35,6 @@
                 "maxlength"
             ],
             "fieldValidateRulesMaxlength": "200"
-        },
-        {
-            "fieldName": "ativo",
-            "fieldType": "Boolean"
-        },
-        {
-            "fieldName": "dataCriacao",
-            "fieldType": "ZonedDateTime",
-            "fieldValidateRules": [
-                "required"
-            ]
         }
     ],
     "changelogDate": "20170208213836",

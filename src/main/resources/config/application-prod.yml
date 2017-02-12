@@ -73,8 +73,8 @@ jhipster:
         ehcache:
             maxBytesLocalHeap: 256M
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: avaliacao360chiote@localhost
-        baseUrl: http://my-server-url-to-change # Modify according to your server's URL
+        from: avaliacao360chiote@gmail.com
+        baseUrl: https://avaliacao360chiote.mybluemix.net # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite:

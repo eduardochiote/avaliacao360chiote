@@ -4,9 +4,9 @@
         .module('avaliacao360ChioteApp')
         .factory('Equipe', Equipe);
 
-    Equipe.$inject = ['$resource', 'DateUtils'];
+    Equipe.$inject = ['$resource'];
 
-    function Equipe ($resource, DateUtils) {
+    function Equipe ($resource) {
         var resourceUrl =  'api/equipes/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,7 +16,6 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
-                        data.dataCriacao = DateUtils.convertDateTimeFromServer(data.dataCriacao);
                     }
                     return data;
                 }

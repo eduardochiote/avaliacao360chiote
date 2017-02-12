@@ -18,8 +18,6 @@
             },
             "nome": "Nome",
             "descricao": "Descricao",
-            "ativo": "Ativo",
-            "dataCriacao": "Data Criacao",
             "lider": "Lider",
             "membros": "Membros"
         }

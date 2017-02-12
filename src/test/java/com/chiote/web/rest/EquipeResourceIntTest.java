@@ -23,13 +23,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.time.ZoneOffset;
-import java.time.ZoneId;
 import java.util.List;
 
-import static com.chiote.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -49,12 +44,6 @@ public class EquipeResourceIntTest {
 
     private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
     private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
-
-    private static final Boolean DEFAULT_ATIVO = false;
-    private static final Boolean UPDATED_ATIVO = true;
-
-    private static final ZonedDateTime DEFAULT_DATA_CRIACAO = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
-    private static final ZonedDateTime UPDATED_DATA_CRIACAO = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
 
     @Inject
     private EquipeRepository equipeRepository;
@@ -94,9 +83,7 @@ public class EquipeResourceIntTest {
     public static Equipe createEntity(EntityManager em) {
         Equipe equipe = new Equipe()
                 .nome(DEFAULT_NOME)
-                .descricao(DEFAULT_DESCRICAO)
-                .ativo(DEFAULT_ATIVO)
-                .dataCriacao(DEFAULT_DATA_CRIACAO);
+                .descricao(DEFAULT_DESCRICAO);
         // Add required entity
         User lider = UserResourceIntTest.createEntity(em);
         em.persist(lider);
@@ -128,8 +115,6 @@ public class EquipeResourceIntTest {
         Equipe testEquipe = equipeList.get(equipeList.size() - 1);
         assertThat(testEquipe.getNome()).isEqualTo(DEFAULT_NOME);
         assertThat(testEquipe.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
-        assertThat(testEquipe.isAtivo()).isEqualTo(DEFAULT_ATIVO);
-        assertThat(testEquipe.getDataCriacao()).isEqualTo(DEFAULT_DATA_CRIACAO);
     }
 
     @Test
@@ -172,24 +157,6 @@ public class EquipeResourceIntTest {
 
     @Test
     @Transactional
-    public void checkDataCriacaoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = equipeRepository.findAll().size();
-        // set the field null
-        equipe.setDataCriacao(null);
-
-        // Create the Equipe, which fails.
-
-        restEquipeMockMvc.perform(post("/api/equipes")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(equipe)))
-            .andExpect(status().isBadRequest());
-
-        List<Equipe> equipeList = equipeRepository.findAll();
-        assertThat(equipeList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllEquipes() throws Exception {
         // Initialize the database
         equipeRepository.saveAndFlush(equipe);
@@ -200,9 +167,7 @@ public class EquipeResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(equipe.getId().intValue())))
             .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME.toString())))
-            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
-            .andExpect(jsonPath("$.[*].ativo").value(hasItem(DEFAULT_ATIVO.booleanValue())))
-            .andExpect(jsonPath("$.[*].dataCriacao").value(hasItem(sameInstant(DEFAULT_DATA_CRIACAO))));
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())));
     }
 
     @Test
@@ -217,9 +182,7 @@ public class EquipeResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(equipe.getId().intValue()))
             .andExpect(jsonPath("$.nome").value(DEFAULT_NOME.toString()))
-            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
-            .andExpect(jsonPath("$.ativo").value(DEFAULT_ATIVO.booleanValue()))
-            .andExpect(jsonPath("$.dataCriacao").value(sameInstant(DEFAULT_DATA_CRIACAO)));
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()));
     }
 
     @Test
@@ -242,9 +205,7 @@ public class EquipeResourceIntTest {
         Equipe updatedEquipe = equipeRepository.findOne(equipe.getId());
         updatedEquipe
                 .nome(UPDATED_NOME)
-                .descricao(UPDATED_DESCRICAO)
-                .ativo(UPDATED_ATIVO)
-                .dataCriacao(UPDATED_DATA_CRIACAO);
+                .descricao(UPDATED_DESCRICAO);
 
         restEquipeMockMvc.perform(put("/api/equipes")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -257,8 +218,6 @@ public class EquipeResourceIntTest {
         Equipe testEquipe = equipeList.get(equipeList.size() - 1);
         assertThat(testEquipe.getNome()).isEqualTo(UPDATED_NOME);
         assertThat(testEquipe.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
-        assertThat(testEquipe.isAtivo()).isEqualTo(UPDATED_ATIVO);
-        assertThat(testEquipe.getDataCriacao()).isEqualTo(UPDATED_DATA_CRIACAO);
     }
 
     @Test

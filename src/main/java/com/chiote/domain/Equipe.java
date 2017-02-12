@@ -6,7 +6,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -33,13 +32,6 @@ public class Equipe implements Serializable {
     @Size(max = 200)
     @Column(name = "descricao", length = 200)
     private String descricao;
-
-    @Column(name = "ativo")
-    private Boolean ativo;
-
-    @NotNull
-    @Column(name = "data_criacao", nullable = false)
-    private ZonedDateTime dataCriacao;
 
     @ManyToOne
     @NotNull
@@ -84,32 +76,6 @@ public class Equipe implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public Boolean isAtivo() {
-        return ativo;
-    }
-
-    public Equipe ativo(Boolean ativo) {
-        this.ativo = ativo;
-        return this;
-    }
-
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
-    }
-
-    public ZonedDateTime getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public Equipe dataCriacao(ZonedDateTime dataCriacao) {
-        this.dataCriacao = dataCriacao;
-        return this;
-    }
-
-    public void setDataCriacao(ZonedDateTime dataCriacao) {
-        this.dataCriacao = dataCriacao;
     }
 
     public User getLider() {
@@ -174,8 +140,6 @@ public class Equipe implements Serializable {
             "id=" + id +
             ", nome='" + nome + "'" +
             ", descricao='" + descricao + "'" +
-            ", ativo='" + ativo + "'" +
-            ", dataCriacao='" + dataCriacao + "'" +
             '}';
     }
 }

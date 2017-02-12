@@ -12,22 +12,14 @@
         <dd>
             <span>{{vm.equipe.descricao}}</span>
         </dd>
-        <dt><span data-translate="avaliacao360ChioteApp.equipe.ativo">Ativo</span></dt>
-        <dd>
-            <span>{{vm.equipe.ativo}}</span>
-        </dd>
-        <dt><span data-translate="avaliacao360ChioteApp.equipe.dataCriacao">Data Criacao</span></dt>
-        <dd>
-            <span>{{vm.equipe.dataCriacao | date:'medium'}}</span>
-        </dd>
         <dt><span data-translate="avaliacao360ChioteApp.equipe.lider">Lider</span></dt>
         <dd>
-            {{vm.equipe.lider.lastName}}
+            {{vm.equipe.lider.firstName}} {{vm.equipe.lider.lastName}}
         </dd>
         <dt><span data-translate="avaliacao360ChioteApp.equipe.membros">Membros</span></dt>
         <dd>
             <span ng-repeat="membros in vm.equipe.membros">
-                {{membros.login}}{{$last ? '' : ', '}}
+                {{membros.firstName}} {{membros.lastName}}{{$last ? '' : ', '}}
             </span>
         </dd>
     </dl>

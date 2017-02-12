@@ -126,8 +126,6 @@
                             return {
                                 nome: null,
                                 descricao: null,
-                                ativo: null,
-                                dataCriacao: null,
                                 id: null
                             };
                         }

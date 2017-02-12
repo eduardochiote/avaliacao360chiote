@@ -21,8 +21,6 @@
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="nome"><span data-translate="avaliacao360ChioteApp.equipe.nome">Nome</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="descricao"><span data-translate="avaliacao360ChioteApp.equipe.descricao">Descricao</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="ativo"><span data-translate="avaliacao360ChioteApp.equipe.ativo">Ativo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataCriacao"><span data-translate="avaliacao360ChioteApp.equipe.dataCriacao">Data Criacao</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="lider.lastName"><span data-translate="avaliacao360ChioteApp.equipe.lider">Lider</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -32,10 +30,8 @@
                     <td><a ui-sref="equipe-detail({id:equipe.id})">{{equipe.id}}</a></td>
                     <td>{{equipe.nome}}</td>
                     <td>{{equipe.descricao}}</td>
-                    <td>{{equipe.ativo}}</td>
-                    <td>{{equipe.dataCriacao | date:'medium'}}</td>
                     <td>
-                        {{equipe.lider.login}}
+                        {{equipe.lider.firstName}} {{equipe.lider.lastName}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
