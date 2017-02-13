@@ -73,7 +73,7 @@ public class Pergunta implements Serializable {
         return avaliacaoModelo;
     }
 
-    public Pergunta avaliacaomodelo(AvaliacaoModelo AvaliacaoModelo) {
+    public Pergunta avaliacaoModelo(AvaliacaoModelo AvaliacaoModelo) {
         this.avaliacaoModelo = AvaliacaoModelo;
         return this;
     }

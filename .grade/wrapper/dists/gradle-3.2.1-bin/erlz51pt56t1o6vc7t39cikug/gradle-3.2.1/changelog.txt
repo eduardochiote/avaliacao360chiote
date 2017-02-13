@@ -1,0 +1,4 @@
+Release Notes - Gradle - Version 3.2.1
+
+See https://docs.gradle.org/3.2.1/release-notes.html
+

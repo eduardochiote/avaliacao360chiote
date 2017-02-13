@@ -2,7 +2,7 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipName": "avaliacaomodelo",
+            "relationshipName": "avaliacaoModelo",
             "otherEntityName": "AvaliacaoModelo",
             "relationshipType": "many-to-one",
             "otherEntityField": "assunto"
