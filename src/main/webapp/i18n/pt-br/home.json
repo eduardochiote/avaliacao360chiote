@@ -1,19 +1,17 @@
 {
     "home": {
-        "title": "Bem vindo, Java Hipster!",
-        "subtitle": "Esta é  a página principal",
+        "title": "Avaliação 360",
+        "subtitle": "A ferramenta para desenvolvimento da sua equipe.",
+        "description": {
+            "paragraph1": "A avaliação 360 graus é um método de avaliação de desempenho muito utilizado pelas empresas, que tem por objetivo principal contribuir para o desenvolvimento de competências essenciais dos colaboradores. É uma importante ferramenta da gestão estratégica de pessoas.",
+            "paragraph2": "Na avaliação 360º, conhecida também como Feedback 360 Graus, Feedback com Múltiplas Fontes, e Avaliação Multivisão, o colaborador recebe feedbacks simultâneos de diversas fontes ao seu redor (daí o nome 360º). Ele pode ser avaliado por seus pares de trabalho, superiores, subordinados, clientes internos e externos. Neste tipo de avaliação é considerada também a avaliação que o próprio funcionário faz de si mesmo.",
+            "paragraph3": "Tal avaliação é feita por meio de um questionário específico, que visa descrever os comportamentos e competências considerados essenciais pela organização, a fim de facilitar o alcance de seus objetivos estratégicos. Este método de avaliação de desempenho é o mais adequado para situar o colaborador com relação às competências desejadas pela empresa.",
+            "paragraph4": "O resultado final da Avaliação 360 graus deverá apresentar as informações necessárias para a identificação de oportunidades de melhoria no desempenho do funcionário. Oferecendo dados para a elaboração de um plano de ação em relação às melhorias individuais e, também, da organização.",
+            "paragraph5": "Os resultados desta avaliação são confidenciais. O colaborador terá acesso apenas ao resultado final da avaliação, porém não saberá quem o avaliou.",
+            "paragraph6": "Desta forma, o avaliado utiliza os feedbacks recebidos na avaliação para guiar o seu desenvolvimento profissional, principalmente no que se refere a competências e comportamentos de liderança percebidos como essenciais pela empresa em que trabalha."
+        },
         "logged": {
             "message": "Você está logado como \"{{username}}\"."
-        },
-        "question": "Em caso de dúvida sobre o JHipster:",
-        "link": {
-            "homepage": "JHipster homepage",
-            "stackoverflow": "JHipster no Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "chat": "JHipster public chat room",
-            "follow": "contate @java_hipster on Twitter"
-        },
-        "like": "Se você gosta do JHipster, não se esqueça de avaliar no",
-        "github": "GitHub"
+        }
     }
 }

@@ -105,6 +105,15 @@ Main page styles
     background-size: contain;
 }
 
+.feedback {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    background: url("../images/feedback.png") no-repeat center top;
+    background-size: contain;
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
