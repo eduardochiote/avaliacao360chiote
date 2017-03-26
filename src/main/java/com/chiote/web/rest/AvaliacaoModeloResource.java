@@ -1,5 +1,6 @@
 package com.chiote.web.rest;
 
+import com.chiote.security.AuthoritiesConstants;
 import com.codahale.metrics.annotation.Timed;
 import com.chiote.domain.AvaliacaoModelo;
 import com.chiote.service.AvaliacaoModeloService;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -31,7 +33,7 @@ import java.util.Optional;
 public class AvaliacaoModeloResource {
 
     private final Logger log = LoggerFactory.getLogger(AvaliacaoModeloResource.class);
-        
+
     @Inject
     private AvaliacaoModeloService avaliacaoModeloService;
 
@@ -44,6 +46,7 @@ public class AvaliacaoModeloResource {
      */
     @PostMapping("/avaliacao-modelos")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<AvaliacaoModelo> createAvaliacaoModelo(@Valid @RequestBody AvaliacaoModelo avaliacaoModelo) throws URISyntaxException {
         log.debug("REST request to save AvaliacaoModelo : {}", avaliacaoModelo);
         if (avaliacaoModelo.getId() != null) {
@@ -66,6 +69,7 @@ public class AvaliacaoModeloResource {
      */
     @PutMapping("/avaliacao-modelos")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<AvaliacaoModelo> updateAvaliacaoModelo(@Valid @RequestBody AvaliacaoModelo avaliacaoModelo) throws URISyntaxException {
         log.debug("REST request to update AvaliacaoModelo : {}", avaliacaoModelo);
         if (avaliacaoModelo.getId() == null) {
@@ -86,6 +90,7 @@ public class AvaliacaoModeloResource {
      */
     @GetMapping("/avaliacao-modelos")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<List<AvaliacaoModelo>> getAllAvaliacaoModelos(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of AvaliacaoModelos");
@@ -102,6 +107,7 @@ public class AvaliacaoModeloResource {
      */
     @GetMapping("/avaliacao-modelos/{id}")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<AvaliacaoModelo> getAvaliacaoModelo(@PathVariable Long id) {
         log.debug("REST request to get AvaliacaoModelo : {}", id);
         AvaliacaoModelo avaliacaoModelo = avaliacaoModeloService.findOne(id);
@@ -120,6 +126,7 @@ public class AvaliacaoModeloResource {
      */
     @DeleteMapping("/avaliacao-modelos/{id}")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<Void> deleteAvaliacaoModelo(@PathVariable Long id) {
         log.debug("REST request to delete AvaliacaoModelo : {}", id);
         avaliacaoModeloService.delete(id);

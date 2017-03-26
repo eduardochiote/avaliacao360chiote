@@ -5,7 +5,7 @@
             "relationshipName": "avaliacaoModelo",
             "otherEntityName": "AvaliacaoModelo",
             "relationshipType": "many-to-one",
-            "otherEntityField": "assunto"
+            "otherEntityField": "nome"
         }
     ],
     "fields": [

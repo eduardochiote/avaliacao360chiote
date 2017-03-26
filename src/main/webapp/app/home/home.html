@@ -1,30 +1,37 @@
 <div ng-cloak>
 
-    <div>
-        <span class="feedback pull-left"></span>
+    <div ng-switch="vm.isAuthenticated()">
 
-        <h1 data-translate="home.title">Welcome!</h1>
-        <p class="lead" data-translate="home.subtitle">This is your homepage</p>
+        <div ng-switch-when="false">
+            <span class="feedback pull-left"></span>
 
-        <hr>
+            <h1 data-translate="home.title">Welcome!</h1>
+            <p class="lead" data-translate="home.subtitle">This is your homepage</p>
 
-        <p data-translate="home.description.paragraph1">Paragraph1 ...</p>
-        <p data-translate="home.description.paragraph2">Paragraph2 ...</p>
-        <p data-translate="home.description.paragraph3">Paragraph3 ...</p>
-        <p data-translate="home.description.paragraph4">Paragraph4 ...</p>
-        <p data-translate="home.description.paragraph5">Paragraph5 ...</p>
-        <p data-translate="home.description.paragraph6">Paragraph6 ...</p>
+            <hr>
 
+            <p data-translate="home.description.paragraph1">Paragraph1 ...</p>
+            <p data-translate="home.description.paragraph2">Paragraph2 ...</p>
+            <p data-translate="home.description.paragraph3">Paragraph3 ...</p>
+            <p data-translate="home.description.paragraph4">Paragraph4 ...</p>
+            <p data-translate="home.description.paragraph5">Paragraph5 ...</p>
+            <p data-translate="home.description.paragraph6">Paragraph6 ...</p>
 
-        <div ng-switch="vm.isAuthenticated()">
+            <p data-translate="global.messages.info.register" translate-compile>
+                You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+            </p>
+        </div>
+
+        <div>
+
+            <h1>apresentar resultados</h1>
+
+            <h2>lista de avaliacoes para realizar</h2>
 
             <p ng-switch-when="true" data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
                 You are logged in as user "{{vm.account.login}}".
             </p>
 
-            <p ng-switch-when="false" data-translate="global.messages.info.register" translate-compile>
-                You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
-            </p>
 
         </div>
 

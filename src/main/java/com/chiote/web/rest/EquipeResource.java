@@ -1,5 +1,6 @@
 package com.chiote.web.rest;
 
+import com.chiote.security.AuthoritiesConstants;
 import com.codahale.metrics.annotation.Timed;
 import com.chiote.domain.Equipe;
 import com.chiote.service.EquipeService;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -31,7 +33,7 @@ import java.util.Optional;
 public class EquipeResource {
 
     private final Logger log = LoggerFactory.getLogger(EquipeResource.class);
-        
+
     @Inject
     private EquipeService equipeService;
 
@@ -44,6 +46,7 @@ public class EquipeResource {
      */
     @PostMapping("/equipes")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<Equipe> createEquipe(@Valid @RequestBody Equipe equipe) throws URISyntaxException {
         log.debug("REST request to save Equipe : {}", equipe);
         if (equipe.getId() != null) {
@@ -66,6 +69,7 @@ public class EquipeResource {
      */
     @PutMapping("/equipes")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<Equipe> updateEquipe(@Valid @RequestBody Equipe equipe) throws URISyntaxException {
         log.debug("REST request to update Equipe : {}", equipe);
         if (equipe.getId() == null) {
@@ -86,6 +90,7 @@ public class EquipeResource {
      */
     @GetMapping("/equipes")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<List<Equipe>> getAllEquipes(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Equipes");
@@ -102,6 +107,7 @@ public class EquipeResource {
      */
     @GetMapping("/equipes/{id}")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<Equipe> getEquipe(@PathVariable Long id) {
         log.debug("REST request to get Equipe : {}", id);
         Equipe equipe = equipeService.findOne(id);
@@ -120,6 +126,7 @@ public class EquipeResource {
      */
     @DeleteMapping("/equipes/{id}")
     @Timed
+    @Secured(AuthoritiesConstants.TEAM_LEADER)
     public ResponseEntity<Void> deleteEquipe(@PathVariable Long id) {
         log.debug("REST request to delete Equipe : {}", id);
         equipeService.delete(id);
