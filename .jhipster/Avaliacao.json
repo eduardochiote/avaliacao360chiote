@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "avaliado",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "avaliacaoModelo",
+            "otherEntityName": "avaliacaoModelo",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipName": "resposta",
+            "otherEntityName": "resposta",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "avaliacao"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dataCricao",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataAtualizacao",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170402012949",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "avaliacao",
+    "pagination": "pagination"
+}

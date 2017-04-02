@@ -1,0 +1,25 @@
+{
+    "avaliacao360ChioteApp": {
+        "equipe" : {
+            "home": {
+                "title": "Equipes",
+                "createLabel": "Criar novo Equipe",
+                "createOrEditLabel": "Criar ou editar Equipe",
+                "search": "Pesquisar por Equipe"
+            },
+            "created": "Um novo Equipe é criado com o identificador {{ param }}",
+            "updated": "Um Equipe é atualizado com o identificador {{ param }}",
+            "deleted": "Um Equipe é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Equipe {{ id }}?"
+            },
+            "detail": {
+                "title": "Equipe"
+            },
+            "nome": "Nome",
+            "descricao": "Descricao",
+            "lider": "Lider",
+            "membros": "Membros"
+        }
+    }
+}

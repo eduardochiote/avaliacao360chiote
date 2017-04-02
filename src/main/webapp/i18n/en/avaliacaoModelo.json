@@ -1,0 +1,25 @@
+{
+    "avaliacao360ChioteApp": {
+        "avaliacaoModelo" : {
+            "home": {
+                "title": "Avaliacao Modelos",
+                "createLabel": "Create a new Avaliacao Modelo",
+                "createOrEditLabel": "Create or edit a Avaliacao Modelo",
+                "search": "Search for Avaliacao Modelo"
+            },
+            "created": "A new Avaliacao Modelo is created with identifier {{ param }}",
+            "updated": "A Avaliacao Modelo is updated with identifier {{ param }}",
+            "deleted": "A Avaliacao Modelo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Avaliacao Modelo {{ id }}?"
+            },
+            "detail": {
+                "title": "Avaliacao Modelo"
+            },
+            "nome": "Nome",
+            "descricao": "Descricao",
+            "perguntas": "Perguntas",
+            "equipe": "Equipe"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns='http://www.ehcache.org/v3'
+         xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <cache-template name="simple">
+        <expiry>
+            <ttl unit="seconds">3600</ttl>
+        </expiry>
+        <heap>100</heap>
+    </cache-template>
+
+    <cache alias="com.chiote.domain.User" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Authority" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.User.authorities" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.PersistentToken" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.User.persistentTokens" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Equipe" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Equipe.membros" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Pergunta" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo.perguntas" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Resposta" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Avaliacao" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Avaliacao.respostas" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle.avaliacaoModelos" uses-template="simple"/>
+
+    <!-- jhipster-needle-ehcache-add-entry -->
+</config>

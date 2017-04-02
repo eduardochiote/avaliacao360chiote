@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="avaliacao360ChioteApp.avaliacao.home.title">Avaliacaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="avaliacao.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="avaliacao360ChioteApp.avaliacao.home.createLabel">
+                        Create new Avaliacao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataCricao"><span data-translate="avaliacao360ChioteApp.avaliacao.dataCricao">Data Cricao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataAtualizacao"><span data-translate="avaliacao360ChioteApp.avaliacao.dataAtualizacao">Data Atualizacao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="avaliado.login"><span data-translate="avaliacao360ChioteApp.avaliacao.avaliado">Avaliado</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="avaliacaoModelo.nome"><span data-translate="avaliacao360ChioteApp.avaliacao.avaliacaoModelo">Avaliacao Modelo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="avaliacao in vm.avaliacaos track by avaliacao.id">
+                    <td><a ui-sref="avaliacao-detail({id:avaliacao.id})">{{avaliacao.id}}</a></td>
+                    <td>{{avaliacao.dataCricao | date:'medium'}}</td>
+                    <td>{{avaliacao.dataAtualizacao | date:'medium'}}</td>
+                    <td>
+                        {{avaliacao.avaliado.login}}
+                    </td>
+                    <td>
+                        <a ui-sref="avaliacao-modelo-detail({id:avaliacao.avaliacaoModelo.id})">{{avaliacao.avaliacaoModelo.nome}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="avaliacao-detail({id:avaliacao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="avaliacao.edit({id:avaliacao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="avaliacao.delete({id:avaliacao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

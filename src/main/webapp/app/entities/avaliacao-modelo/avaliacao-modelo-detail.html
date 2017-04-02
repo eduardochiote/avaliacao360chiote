@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="avaliacao360ChioteApp.avaliacaoModelo.detail.title">Avaliacao Modelo</span> {{vm.avaliacaoModelo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacaoModelo.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.avaliacaoModelo.nome}}</span>
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacaoModelo.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.avaliacaoModelo.descricao}}</span>
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacaoModelo.equipe">Equipe</span></dt>
+        <dd>
+            <a ui-sref="equipe-detail({id:vm.avaliacaoModelo.equipe.id})">{{vm.avaliacaoModelo.equipe.nome}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="avaliacao-modelo-detail.edit({id:vm.avaliacaoModelo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

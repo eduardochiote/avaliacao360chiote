@@ -1,0 +1,25 @@
+{
+    "avaliacao360ChioteApp": {
+        "avaliacaoModelo" : {
+            "home": {
+                "title": "Avaliacao Modelos",
+                "createLabel": "Criar novo Avaliacao Modelo",
+                "createOrEditLabel": "Criar ou editar Avaliacao Modelo",
+                "search": "Pesquisar por Avaliacao Modelo"
+            },
+            "created": "Um novo Avaliacao Modelo é criado com o identificador {{ param }}",
+            "updated": "Um Avaliacao Modelo é atualizado com o identificador {{ param }}",
+            "deleted": "Um Avaliacao Modelo é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Avaliacao Modelo {{ id }}?"
+            },
+            "detail": {
+                "title": "Avaliacao Modelo"
+            },
+            "nome": "Nome",
+            "descricao": "Descricao",
+            "perguntas": "Perguntas",
+            "equipe": "Equipe"
+        }
+    }
+}
