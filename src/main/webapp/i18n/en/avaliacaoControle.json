@@ -1,0 +1,25 @@
+{
+    "avaliacao360ChioteApp": {
+        "avaliacaoControle" : {
+            "home": {
+                "title": "Avaliacao Controles",
+                "createLabel": "Create a new Avaliacao Controle",
+                "createOrEditLabel": "Create or edit a Avaliacao Controle",
+                "search": "Search for Avaliacao Controle"
+            },
+            "created": "A new Avaliacao Controle is created with identifier {{ param }}",
+            "updated": "A Avaliacao Controle is updated with identifier {{ param }}",
+            "deleted": "A Avaliacao Controle is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Avaliacao Controle {{ id }}?"
+            },
+            "detail": {
+                "title": "Avaliacao Controle"
+            },
+            "situacao": "Situacao",
+            "avaliador": "Avaliador",
+            "avaliado": "Avaliado",
+            "avaliacaoModelo": "Avaliacao Modelo"
+        }
+    }
+}

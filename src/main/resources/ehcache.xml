@@ -30,5 +30,15 @@
 
     <cache alias="com.chiote.domain.AvaliacaoModelo.perguntas" uses-template="simple"/>
 
+    <cache alias="com.chiote.domain.Avaliacao" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Avaliacao.respostas" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Resposta" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle.avaliacaoModelos" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "avaliador",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "avaliado",
+            "otherEntityName": "avaliado",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipName": "avaliacaoModelo",
+            "otherEntityName": "avaliacaoModelo",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "nome"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "situacao",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170402014754",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "avaliacao_controle",
+    "pagination": "pagination"
+}

@@ -1,0 +1,24 @@
+{
+    "avaliacao360ChioteApp": {
+        "resposta" : {
+            "home": {
+                "title": "Respostas",
+                "createLabel": "Create a new Resposta",
+                "createOrEditLabel": "Create or edit a Resposta",
+                "search": "Search for Resposta"
+            },
+            "created": "A new Resposta is created with identifier {{ param }}",
+            "updated": "A Resposta is updated with identifier {{ param }}",
+            "deleted": "A Resposta is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Resposta {{ id }}?"
+            },
+            "detail": {
+                "title": "Resposta"
+            },
+            "nota": "Nota",
+            "pergunta": "Pergunta",
+            "avaliacao": "Avaliacao"
+        }
+    }
+}

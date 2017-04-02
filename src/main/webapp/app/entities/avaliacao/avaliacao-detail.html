@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="avaliacao360ChioteApp.avaliacao.detail.title">Avaliacao</span> {{vm.avaliacao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacao.dataCricao">Data Cricao</span></dt>
+        <dd>
+            <span>{{vm.avaliacao.dataCricao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacao.dataAtualizacao">Data Atualizacao</span></dt>
+        <dd>
+            <span>{{vm.avaliacao.dataAtualizacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacao.avaliado">Avaliado</span></dt>
+        <dd>
+            {{vm.avaliacao.avaliado.login}}
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.avaliacao.avaliacaoModelo">Avaliacao Modelo</span></dt>
+        <dd>
+            <a ui-sref="avaliacao-modelo-detail({id:vm.avaliacao.avaliacaoModelo.id})">{{vm.avaliacao.avaliacaoModelo.nome}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="avaliacao-detail.edit({id:vm.avaliacao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

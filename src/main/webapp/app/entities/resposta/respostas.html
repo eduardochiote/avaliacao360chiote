@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="avaliacao360ChioteApp.resposta.home.title">Respostas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="resposta.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="avaliacao360ChioteApp.resposta.home.createLabel">
+                        Create new Resposta
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nota"><span data-translate="avaliacao360ChioteApp.resposta.nota">Nota</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pergunta.nota"><span data-translate="avaliacao360ChioteApp.resposta.pergunta">Pergunta</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="avaliacao.id"><span data-translate="avaliacao360ChioteApp.resposta.avaliacao">Avaliacao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resposta in vm.respostas track by resposta.id">
+                    <td><a ui-sref="resposta-detail({id:resposta.id})">{{resposta.id}}</a></td>
+                    <td>{{resposta.nota}}</td>
+                    <td>
+                        <a ui-sref="pergunta-detail({id:resposta.pergunta.id})">{{resposta.pergunta.nota}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="avaliacao-detail({id:resposta.avaliacao.id})">{{resposta.avaliacao.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="resposta-detail({id:resposta.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resposta.edit({id:resposta.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resposta.delete({id:resposta.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

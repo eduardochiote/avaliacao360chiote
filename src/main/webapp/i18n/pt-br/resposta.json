@@ -1,0 +1,24 @@
+{
+    "avaliacao360ChioteApp": {
+        "resposta" : {
+            "home": {
+                "title": "Respostas",
+                "createLabel": "Criar novo Resposta",
+                "createOrEditLabel": "Criar ou editar Resposta",
+                "search": "Pesquisar por Resposta"
+            },
+            "created": "Um novo Resposta é criado com o identificador {{ param }}",
+            "updated": "Um Resposta é atualizado com o identificador {{ param }}",
+            "deleted": "Um Resposta é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Resposta {{ id }}?"
+            },
+            "detail": {
+                "title": "Resposta"
+            },
+            "nota": "Nota",
+            "pergunta": "Pergunta",
+            "avaliacao": "Avaliacao"
+        }
+    }
+}

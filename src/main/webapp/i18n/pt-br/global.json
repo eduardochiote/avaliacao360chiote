@@ -12,6 +12,9 @@
                 "equipe": "Equipe",
                 "pergunta": "Pergunta",
                 "avaliacaoModelo": "Avaliacao Modelo",
+                "resposta": "Resposta",
+                "avaliacao": "Avaliacao",
+                "avaliacaoControle": "Avaliacao Controle",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

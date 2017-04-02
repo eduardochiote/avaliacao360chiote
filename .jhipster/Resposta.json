@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "pergunta",
+            "otherEntityName": "pergunta",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "nota"
+        },
+        {
+            "relationshipName": "avaliacao",
+            "otherEntityName": "avaliacao",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nota",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "1",
+            "fieldValidateRulesMax": "5"
+        }
+    ],
+    "changelogDate": "20170402005625",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "resposta",
+    "pagination": "pagination"
+}
