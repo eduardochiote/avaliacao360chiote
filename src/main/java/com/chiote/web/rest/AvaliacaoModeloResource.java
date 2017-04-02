@@ -46,7 +46,7 @@ public class AvaliacaoModeloResource {
      */
     @PostMapping("/avaliacao-modelos")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<AvaliacaoModelo> createAvaliacaoModelo(@Valid @RequestBody AvaliacaoModelo avaliacaoModelo) throws URISyntaxException {
         log.debug("REST request to save AvaliacaoModelo : {}", avaliacaoModelo);
         if (avaliacaoModelo.getId() != null) {
@@ -69,7 +69,7 @@ public class AvaliacaoModeloResource {
      */
     @PutMapping("/avaliacao-modelos")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<AvaliacaoModelo> updateAvaliacaoModelo(@Valid @RequestBody AvaliacaoModelo avaliacaoModelo) throws URISyntaxException {
         log.debug("REST request to update AvaliacaoModelo : {}", avaliacaoModelo);
         if (avaliacaoModelo.getId() == null) {
@@ -90,7 +90,7 @@ public class AvaliacaoModeloResource {
      */
     @GetMapping("/avaliacao-modelos")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<List<AvaliacaoModelo>> getAllAvaliacaoModelos(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of AvaliacaoModelos");
@@ -107,7 +107,7 @@ public class AvaliacaoModeloResource {
      */
     @GetMapping("/avaliacao-modelos/{id}")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<AvaliacaoModelo> getAvaliacaoModelo(@PathVariable Long id) {
         log.debug("REST request to get AvaliacaoModelo : {}", id);
         AvaliacaoModelo avaliacaoModelo = avaliacaoModeloService.findOne(id);
@@ -126,7 +126,7 @@ public class AvaliacaoModeloResource {
      */
     @DeleteMapping("/avaliacao-modelos/{id}")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<Void> deleteAvaliacaoModelo(@PathVariable Long id) {
         log.debug("REST request to delete AvaliacaoModelo : {}", id);
         avaliacaoModeloService.delete(id);

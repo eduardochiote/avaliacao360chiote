@@ -22,13 +22,22 @@
             </p>
         </div>
 
-        <div>
+        <div ng-switch-when="true" has-authority="ROLE_ADMIN">
+
+            <p data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+                You are logged in as user "{{vm.account.login}}".
+            </p>
+
+        </div>
+
+
+        <div ng-switch-when="true" has-authority="MEMBER">
 
             <h1>apresentar resultados</h1>
 
             <h2>lista de avaliacoes para realizar</h2>
 
-            <p ng-switch-when="true" data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+            <p data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
                 You are logged in as user "{{vm.account.login}}".
             </p>
 

@@ -35,13 +35,13 @@
                 </li>
 
                 <!-- member -->
-                <li ui-sref-active="active" ng-switch-when="true" has-authority="TEAM_MEMBER">
+                <li ui-sref-active="active" ng-switch-when="true" has-authority="ROLE_MEMBER">
                     <a ui-sref="home" ng-click="vm.collapseNavbar()">
                         <span class="glyphicon glyphicon-home"></span>
                         <span class="hidden-sm" data-translate="global.menu.resultados">Resultados</span>
                     </a>
                 </li>
-                <li ui-sref-active="false" ng-switch-when="true" has-authority="TEAM_MEMBER">
+                <li ui-sref-active="false" ng-switch-when="true" has-authority="ROLE_MEMBER">
                     <a ui-sref="home" ng-click="vm.collapseNavbar()">
                         <span class="glyphicon glyphicon-home"></span>
                         <span class="hidden-sm" data-translate="global.menu.avaliacao">Avaliacao</span>
@@ -50,7 +50,7 @@
 
                 <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
                 <!-- leader -->
-                <li ng-class="{active: vm.$state.includes('entity')}" ng-switch-when="true" has-authority="TEAM_LEADER" uib-dropdown class="dropdown pointer">
+                <li ng-class="{active: vm.$state.includes('entity')}" ng-switch-when="true" has-authority="ROLE_LEADER" uib-dropdown class="dropdown pointer">
                     <a class="dropdown-toggle" uib-dropdown-toggle href="" id="entity-menu">
                         <span>
                             <span class="glyphicon glyphicon-th-list"></span>
@@ -168,15 +168,13 @@
                                 <span data-translate="global.menu.account.password">Password</span>
                             </a>
                         </li>
-
+                        <li ui-sref-active="active">
+                            <a href="" ng-click="vm.logout()" id="logout">
+                                <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+                                <span data-translate="global.menu.account.logout">Sign out</span>
+                            </a>
+                        </li>
                     </ul>
-                </li>
-
-                <li ui-sref-active="active" ng-switch-when="true">
-                    <a href="" ng-click="vm.logout()" id="logout">
-                        <span class="glyphicon glyphicon-log-out"></span>&nbsp;
-                        <span data-translate="global.menu.account.logout">Sign out</span>
-                    </a>
                 </li>
 
                 <!--

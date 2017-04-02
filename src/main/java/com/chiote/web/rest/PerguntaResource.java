@@ -46,7 +46,7 @@ public class PerguntaResource {
      */
     @PostMapping("/perguntas")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<Pergunta> createPergunta(@Valid @RequestBody Pergunta pergunta) throws URISyntaxException {
         log.debug("REST request to save Pergunta : {}", pergunta);
         if (pergunta.getId() != null) {
@@ -69,7 +69,7 @@ public class PerguntaResource {
      */
     @PutMapping("/perguntas")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<Pergunta> updatePergunta(@Valid @RequestBody Pergunta pergunta) throws URISyntaxException {
         log.debug("REST request to update Pergunta : {}", pergunta);
         if (pergunta.getId() == null) {
@@ -90,7 +90,7 @@ public class PerguntaResource {
      */
     @GetMapping("/perguntas")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<List<Pergunta>> getAllPerguntas(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Perguntas");
@@ -107,7 +107,7 @@ public class PerguntaResource {
      */
     @GetMapping("/perguntas/{id}")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<Pergunta> getPergunta(@PathVariable Long id) {
         log.debug("REST request to get Pergunta : {}", id);
         Pergunta pergunta = perguntaService.findOne(id);
@@ -126,7 +126,7 @@ public class PerguntaResource {
      */
     @DeleteMapping("/perguntas/{id}")
     @Timed
-    @Secured(AuthoritiesConstants.TEAM_LEADER)
+    @Secured(AuthoritiesConstants.LEADER)
     public ResponseEntity<Void> deletePergunta(@PathVariable Long id) {
         log.debug("REST request to delete Pergunta : {}", id);
         perguntaService.delete(id);
