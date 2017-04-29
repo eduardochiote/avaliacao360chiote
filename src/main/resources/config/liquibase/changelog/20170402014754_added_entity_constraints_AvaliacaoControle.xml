@@ -18,7 +18,7 @@
                                  baseTableName="avaliacao_controle"
                                  constraintName="fk_avaliacao_controle_avaliado_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="avaliado"/>
+                                 referencedTableName="jhi_user"/>
 
     </changeSet>
 </databaseChangeLog>

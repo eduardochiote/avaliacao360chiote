@@ -4,18 +4,13 @@
         "browsehappy": "Você está usando um navegador <strong>desatualizado</strong>. Favor <a href=\"http://browsehappy.com/?locale=pt_BR\">atualizar o seu navegador</a> para ter uma experiência melhor.",
         "menu": {
             "home": "Início",
-            "avaliacao": "Avaliação",
-            "resultados": "Resultados",
-            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "rate": "Avaliação",
+            "results": "Resultados",
             "entities": {
-                "main": "Avaliacao",
+                "main": "Configuração",
                 "equipe": "Equipe",
-                "pergunta": "Pergunta",
-                "avaliacaoModelo": "Avaliacao Modelo",
-                "resposta": "Resposta",
-                "avaliacao": "Avaliacao",
-                "avaliacaoControle": "Avaliacao Controle",
-                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+                "avaliacaoModelo": "Modelo",
+                "pergunta": "Pergunta"
             },
             "account": {
                 "main": "Conta",

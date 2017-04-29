@@ -1,14 +1,11 @@
 package com.chiote.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -35,12 +32,7 @@ public class AvaliacaoControle implements Serializable {
 
     @ManyToOne
     @NotNull
-    private Avaliado avaliado;
-
-    @OneToMany(mappedBy = "nome")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AvaliacaoModelo> avaliacaoModelos = new HashSet<>();
+    private User avaliado;
 
     public Long getId() {
         return id;
@@ -76,42 +68,17 @@ public class AvaliacaoControle implements Serializable {
         this.avaliador = user;
     }
 
-    public Avaliado getAvaliado() {
+    public User getAvaliado() {
         return avaliado;
     }
 
-    public AvaliacaoControle avaliado(Avaliado avaliado) {
-        this.avaliado = avaliado;
+    public AvaliacaoControle avaliado(User user) {
+        this.avaliado = user;
         return this;
     }
 
-    public void setAvaliado(Avaliado avaliado) {
-        this.avaliado = avaliado;
-    }
-
-    public Set<AvaliacaoModelo> getAvaliacaoModelos() {
-        return avaliacaoModelos;
-    }
-
-    public AvaliacaoControle avaliacaoModelos(Set<AvaliacaoModelo> avaliacaoModelos) {
-        this.avaliacaoModelos = avaliacaoModelos;
-        return this;
-    }
-
-    public AvaliacaoControle addAvaliacaoModelo(AvaliacaoModelo avaliacaoModelo) {
-        avaliacaoModelos.add(avaliacaoModelo);
-        avaliacaoModelo.setNome(this);
-        return this;
-    }
-
-    public AvaliacaoControle removeAvaliacaoModelo(AvaliacaoModelo avaliacaoModelo) {
-        avaliacaoModelos.remove(avaliacaoModelo);
-        avaliacaoModelo.setNome(null);
-        return this;
-    }
-
-    public void setAvaliacaoModelos(Set<AvaliacaoModelo> avaliacaoModelos) {
-        this.avaliacaoModelos = avaliacaoModelos;
+    public void setAvaliado(User user) {
+        this.avaliado = user;
     }
 
     @Override

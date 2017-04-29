@@ -15,4 +15,7 @@ public interface AvaliacaoControleRepository extends JpaRepository<AvaliacaoCont
     @Query("select avaliacaoControle from AvaliacaoControle avaliacaoControle where avaliacaoControle.avaliador.login = ?#{principal.username}")
     List<AvaliacaoControle> findByAvaliadorIsCurrentUser();
 
+    @Query("select avaliacaoControle from AvaliacaoControle avaliacaoControle where avaliacaoControle.avaliado.login = ?#{principal.username}")
+    List<AvaliacaoControle> findByAvaliadoIsCurrentUser();
+
 }

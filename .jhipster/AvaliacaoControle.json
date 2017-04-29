@@ -13,18 +13,12 @@
         },
         {
             "relationshipName": "avaliado",
-            "otherEntityName": "avaliado",
+            "otherEntityName": "user",
             "relationshipType": "many-to-one",
             "relationshipValidateRules": [
                 "required"
             ],
             "otherEntityField": "login"
-        },
-        {
-            "relationshipName": "avaliacaoModelo",
-            "otherEntityName": "avaliacaoModelo",
-            "relationshipType": "one-to-many",
-            "otherEntityRelationshipName": "nome"
         }
     ],
     "fields": [

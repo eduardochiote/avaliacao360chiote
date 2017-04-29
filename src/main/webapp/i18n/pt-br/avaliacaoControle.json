@@ -18,8 +18,7 @@
             },
             "situacao": "Situacao",
             "avaliador": "Avaliador",
-            "avaliado": "Avaliado",
-            "avaliacaoModelo": "Avaliacao Modelo"
+            "avaliado": "Avaliado"
         }
     }
 }

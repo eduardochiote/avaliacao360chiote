@@ -5,17 +5,15 @@
         .module('avaliacao360ChioteApp')
         .controller('AvaliacaoControleDialogController', AvaliacaoControleDialogController);
 
-    AvaliacaoControleDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'AvaliacaoControle', 'User', 'Avaliado', 'AvaliacaoModelo'];
+    AvaliacaoControleDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'AvaliacaoControle', 'User'];
 
-    function AvaliacaoControleDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, AvaliacaoControle, User, Avaliado, AvaliacaoModelo) {
+    function AvaliacaoControleDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, AvaliacaoControle, User) {
         var vm = this;
 
         vm.avaliacaoControle = entity;
         vm.clear = clear;
         vm.save = save;
         vm.users = User.query();
-        vm.avaliados = Avaliado.query();
-        vm.avaliacaomodelos = AvaliacaoModelo.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

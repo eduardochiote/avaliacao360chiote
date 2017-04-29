@@ -4,7 +4,7 @@ import com.chiote.Avaliacao360ChioteApp;
 
 import com.chiote.domain.AvaliacaoControle;
 import com.chiote.domain.User;
-import com.chiote.domain.Avaliado;
+import com.chiote.domain.User;
 import com.chiote.repository.AvaliacaoControleRepository;
 import com.chiote.service.AvaliacaoControleService;
 
@@ -87,7 +87,7 @@ public class AvaliacaoControleResourceIntTest {
         em.flush();
         avaliacaoControle.setAvaliador(avaliador);
         // Add required entity
-        Avaliado avaliado = AvaliadoResourceIntTest.createEntity(em);
+        User avaliado = UserResourceIntTest.createEntity(em);
         em.persist(avaliado);
         em.flush();
         avaliacaoControle.setAvaliado(avaliado);
